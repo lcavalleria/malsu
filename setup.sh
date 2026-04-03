@@ -83,6 +83,8 @@ systemctl --user enable hyprpolkitagent.service
 echo "Setup auto login (will add user $user to new nopasswdlogin group)"
 sudo groupadd -r nopasswdlogin > /dev/null
 sudo gpasswd -a $user nopasswdlogin > /dev/null
+echo "Add user to input group, needed for waybar"
+sudo usermod -a -G input $user
 sed "s/{user}/$user/g" "$SCRIPT_DIR/dotfiles/etc/emptty/conf" | sudo tee /etc/emptty/conf > /dev/null
 echo "Copy config dotfiles"
 cp -rf "$SCRIPT_DIR/dotfiles/.config" $HOME
