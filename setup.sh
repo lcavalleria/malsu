@@ -46,7 +46,8 @@ packages=(
 	xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt5-wayland qt6-wayland # Hyprland themes integration
 	waybar # Status bar
 	cliphist # clipboard
-	neovim # Pr0 text editor
+	ripgrep # for neovim
+	neovim
 	zen-browser-bin # Web browser
 	man-db # manual pages
 	p7zip # 7z
@@ -91,6 +92,9 @@ cp -rf "$SCRIPT_DIR/dotfiles/.config" $HOME
 echo "Copy .zshrc and powerlevel10k configs (.p10k.zsh)"
 cp "$SCRIPT_DIR/dotfiles/.zshrc" $HOME
 cp "$SCRIPT_DIR/dotfiles/.p10k.zsh" $HOME
+
+echo "Clone nvim-config git repo"
+git clone https://github.com/lcavalleria/nvim-config $HOME/.config/nvim
 
 
 ##################### User Configurations ###################
