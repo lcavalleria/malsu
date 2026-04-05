@@ -8,7 +8,7 @@ echo "Enter password for all required sudo commands in script"
 sudo -v
 while true; do sudo -v; sleep 60; done 2>/dev/null & SUDO_PID=$!
 # make sure we stop refreshing password
-trap 'kill $SUDO_PID 2>/dev/null' EXIT
+	trap 'kill $SUDO_PID 2>/dev/null' EXIT
 
 
 
@@ -51,12 +51,14 @@ packages=(
 	man-db # manual pages
 	p7zip # 7z
 	ttf-firacode-nerd # nice monofont
+	ttf-roboto # nice propo font
+	noto-fonts-emoji # emojis
+	ttf-nerd-fonts-symbols # Fallback symbols
 	brightnessctl # for screen and keyboard lights
 	openssh
 	git
+	zsh
 )
-echo "Packages to install:"
-printf ' - %s\n' "${packages[@]}"
 for pkg in "${packages[@]}"; do
 	if pacman -Qi "$pkg" >/dev/null 2>&1; then
 		echo -e "[SKIP]\t\t$pkg"
@@ -69,26 +71,42 @@ for pkg in "${packages[@]}"; do
 		fi
 	fi
 done
-			
-#paru -S --noconfirm --needed --quiet "${packages[@]}"
 
-################### Enable necessary services ################### 
-echo "Enable emptty systemd..."
-sudo systemctl enable emptty
-echo "Enable hyprpolkitagent..."
-systemctl --user enable hyprpolkitagent.service
+			
+################ Installations from other sources ###############
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" > /dev/null
 
 
 ###################### Copy config dotfile ######################
-echo "Setup auto login (will add user $user to new nopasswdlogin group)"
-sudo groupadd -r nopasswdlogin > /dev/null
-sudo gpasswd -a $user nopasswdlogin > /dev/null
-echo "Add user to input group, needed for waybar"
-sudo usermod -a -G input $user
+echo "Copy emptty conf with autologin for default user: $user"
 sed "s/{user}/$user/g" "$SCRIPT_DIR/dotfiles/etc/emptty/conf" | sudo tee /etc/emptty/conf > /dev/null
+
+echo "Copy default fonts conf.d (FiraCode for mono, Roboto for sans)"
+sudo cp "$SCRIPT_DIR/dotfiles/etc/fonts/conf.d/46-malsu.conf" /etc/fonts/conf.d/
+
 echo "Copy config dotfiles"
 cp -rf "$SCRIPT_DIR/dotfiles/.config" $HOME
 
+echo "Copy .zshrc"
+cp "$SCRIPT_DIR/dotfiles/.zshrc" $HOME
 
-############################# Other #############################
-cp -r "$SCRIPT_DIR/wallpapers" $HOME/.config/awww/wallpapers
+
+##################### User Configurations ###################
+echo "Set $user default shell to zsh"
+sudo chsh -s /bin/zsh "$user" > /dev/null
+
+echo "Add $user to new nopasswdlogin group"
+sudo groupadd -r nopasswdlogin > /dev/null
+sudo gpasswd -a $user nopasswdlogin > /dev/null
+
+echo "Add user to input group, needed for waybar"
+sudo usermod -a -G input $user > /dev/null
+
+
+################### Enable necessary services ################### 
+echo "Enable emptty systemd..."
+sudo systemctl enable emptty > /dev/null
+echo "Enable hyprpolkitagent..."
+systemctl --user enable hyprpolkitagent.service > /dev/null
+
