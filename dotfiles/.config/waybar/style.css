@@ -12,21 +12,21 @@ window#waybar {
 
 .modules-left {
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
+  border-radius: 0px 0px 15px 15px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .modules-center {
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
+  border-radius: 0px 0px 15px 15px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .modules-right {
   background-color: rgba(0, 0,0, 0.4);
-  border-radius: 20px;
+  border-radius: 0px 0px 15px 15px;
   padding-left: 15px;
   padding-right: 15px;
 }
