@@ -88,8 +88,9 @@ sudo cp "$SCRIPT_DIR/dotfiles/etc/fonts/conf.d/68-malsu.conf" /etc/fonts/conf.d/
 echo "Copy config dotfiles"
 cp -rf "$SCRIPT_DIR/dotfiles/.config" $HOME
 
-echo "Copy .zshrc"
+echo "Copy .zshrc and powerlevel10k configs (.p10k.zsh)"
 cp "$SCRIPT_DIR/dotfiles/.zshrc" $HOME
+cp "$SCRIPT_DIR/dotfiles/.p10k.zsh" $HOME
 
 
 ##################### User Configurations ###################

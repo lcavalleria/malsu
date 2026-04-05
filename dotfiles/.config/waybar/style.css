@@ -1,6 +1,7 @@
 * {
   min-height: 0;
   min-width: 0;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: 700;
 }
@@ -11,112 +12,176 @@ window#waybar {
 
 .modules-left {
   background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .modules-center {
   background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .modules-right {
   background-color: rgba(0, 0,0, 0.4);
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
+/* Left modules */
 #workspaces button {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  /* background-color: #181825; */
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-}
-
-#workspaces button:hover {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  background-color: transparent;
+  color: rgb(130,60,130);
 }
 
 #workspaces button.active {
-  background-color: #1e1e2e;
   color: #89b4fa;
+  color: rgb(130,60,130);
 }
 
 #workspaces button.urgent {
-  background-color: #1e1e2e;
   color: #f38ba8;
+  color: rgb(200,60,60);
 }
 
-#clock,
-#pulseaudio,
-#custom-logo,
-#custom-power,
-#custom-spotify,
-#custom-notification,
-#cpu,
-#tray,
-#memory,
-#window,
-#mpris {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  /* background-color: #181825; */
-  background-color: #1e1e2e;
+#backlight-slider {
+	padding: 0;
+	padding-top: 5;
+	padding-bottom: 5;
+}
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+#backlight-slider trough {
+    min-height: 20px;
+    min-width: 5px;
+    border: none;
+    background: transparent;
+}
+#backlight-slider highlight {
+    min-width: 5px;
+    border-radius: 20px;
+    border: none;
+    background: rgb(150,130,30);
 }
 
-#mpris.playing {
-  color: #a6e3a1;
+#pulseaudio-slider {
+    padding: 0;
+padding-top: 5;
+padding-bottom: 5;
 }
-
-#mpris.paused {
-  color: #9399b2;
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
 }
-
-#custom-sep {
-  padding: 0px;
-  color: #585b70;
+#pulseaudio-slider trough {
+    min-height: 20px;
+    min-width: 5px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.2);
 }
-
-window#waybar.empty #window {
-  background-color: transparent;
-}
-
-#cpu {
-  color: #94e2d5;
-}
-
-#memory {
-  color: #cba6f7;
-}
-
-#clock {
-  color: #74c7ec;
-}
-
-#clock.simpleclock {
-  color: #89b4fa;
-}
-
-#window {
-  color: #cdd6f4;
+#pulseaudio-slider highlight {
+    min-width: 5px;
+    min-height: 0px;
+    border: none;
+    border-radius: 20px;
+    background: rgb(30,80,120);
 }
 
 #pulseaudio {
-  color: #b4befe;
+  color: rgb(130,60,130);
+    min-width: 18px;
+    font-size: 16px;
 }
-
 #pulseaudio.muted {
-  color: #a6adc8;
+  color: rgb(130,60,130);
 }
 
-#custom-logo {
-  color: #89b4fa;
+/* Center modules */
+#clock {
+  color: rgb(130,60,130);
 }
 
-#custom-power {
-  color: #f38ba8;
+/* Right modules */
+#network {
+  color: rgb(130,60,130);
+}
+#language {
+  color: rgb(130,60,130);
+}
+
+#power-profiles-daemon {
+  min-width: 20px;
+}
+#power-profiles-daemon.performance {
+  color: rgb(200,60,60);
+}
+#power-profiles-daemon.balanced {
+  color: rgb(210,130,60);
+}
+#power-profiles-daemon.power-saver {
+  color: rgb(60,110,60);
+}
+
+#cpu {
+  color: rgb(60,110,60);
+  background-color: transparent;
+}
+#cpu.warning {
+  color: rgb(210,130,60);
+}
+#cpu.critical {
+  color: rgb(200,60,60);
+}
+
+#memory {
+    color: rgb(60,110,60);
+    background-color: transparent;
+}
+#memory.warning {
+  color: rgb(210,130,60);
+}
+#memory.critical {
+  color: rgb(200,60,60);
+}
+
+#temperature {
+    color: rgb(60,110,60);
+    background-color: transparent;
+}
+#temperature.warning {
+  color: rgb(210,130,60);
+}
+#temperature.critical {
+  color: rgb(200,60,60);
+}
+
+#battery {
+    color: rgb(60,110,60);
+    background-color: transparent;
+}
+#temperature.warning {
+  color: rgb(210,130,60);
+}
+#temperature.critical {
+  color: rgb(200,60,60);
 }
 
 tooltip {
-  background-color: #242424;
-  border: 2px solid #89b4fa;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
 }
