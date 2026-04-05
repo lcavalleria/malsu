@@ -83,7 +83,7 @@ echo "Copy emptty conf with autologin for default user: $user"
 sed "s/{user}/$user/g" "$SCRIPT_DIR/dotfiles/etc/emptty/conf" | sudo tee /etc/emptty/conf > /dev/null
 
 echo "Copy default fonts conf.d (FiraCode for mono, Roboto for sans)"
-sudo cp "$SCRIPT_DIR/dotfiles/etc/fonts/conf.d/46-malsu.conf" /etc/fonts/conf.d/
+sudo cp "$SCRIPT_DIR/dotfiles/etc/fonts/conf.d/68-malsu.conf" /etc/fonts/conf.d/
 
 echo "Copy config dotfiles"
 cp -rf "$SCRIPT_DIR/dotfiles/.config" $HOME
