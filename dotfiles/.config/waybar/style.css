@@ -1,3 +1,5 @@
+@import 'theme.css';
+
 * {
   min-height: 0;
   min-width: 0;
@@ -25,7 +27,7 @@ window#waybar {
 }
 
 .modules-right {
-  background-color: rgba(0, 0,0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0px 0px 15px 15px;
   padding-left: 15px;
   padding-right: 15px;
@@ -34,151 +36,168 @@ window#waybar {
 /* Left modules */
 #workspaces button {
   background-color: transparent;
-  color: rgb(130,60,130);
+  color: @fg;
 }
 
 #workspaces button.active {
-  color: #89b4fa;
-  color: rgb(130,60,130);
+  color:@fg;
 }
 
 #workspaces button.urgent {
-  color: #f38ba8;
-  color: rgb(200,60,60);
+  color: @status_critical;
 }
 
 #backlight-slider {
-	padding: 0;
-	padding-top: 5;
-	padding-bottom: 5;
+  padding: 0;
+  padding-top: 5;
+  padding-bottom: 5;
 }
+
 #backlight-slider slider {
-    min-height: 0px;
-    min-width: 0px;
-    opacity: 0;
-    background-image: none;
-    border: none;
-    box-shadow: none;
-    background: none;
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  background: none;
 }
+
 #backlight-slider trough {
-    min-height: 20px;
-    min-width: 5px;
-    border: none;
-    background: transparent;
+  min-height: 20px;
+  min-width: 5px;
+  border: none;
+  background: transparent;
 }
+
 #backlight-slider highlight {
-    min-width: 5px;
-    border-radius: 20px;
-    border: none;
-    background: rgb(150,130,30);
+  min-width: 5px;
+  border-radius: 20px;
+  border: none;
+  background: @brightness;
 }
 
 #pulseaudio-slider {
-    padding: 0;
-padding-top: 5;
-padding-bottom: 5;
+  padding: 0;
+  padding-top: 5;
+  padding-bottom: 5;
 }
+
 #pulseaudio-slider slider {
-    min-height: 0px;
-    min-width: 0px;
-    opacity: 0;
-    background-image: none;
-    border: none;
-    box-shadow: none;
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
 }
+
 #pulseaudio-slider trough {
-    min-height: 20px;
-    min-width: 5px;
-    border: none;
-    border-radius: 20px;
-    background: rgba(0,0,0,0.2);
+  min-height: 20px;
+  min-width: 5px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
 }
+
 #pulseaudio-slider highlight {
-    min-width: 5px;
-    min-height: 0px;
-    border: none;
-    border-radius: 20px;
-    background: rgb(30,80,120);
+  min-width: 5px;
+  min-height: 0px;
+  border: none;
+  border-radius: 20px;
+  background: @audio_volue;
 }
 
 #pulseaudio {
-  color: rgb(130,60,130);
-    min-width: 18px;
-    font-size: 16px;
+  color:@fg;
+  min-width: 18px;
+  font-size: 16px;
 }
+
 #pulseaudio.muted {
-  color: rgb(130,60,130);
+  color:@fg;
 }
 
 /* Center modules */
 #clock {
-  color: rgb(130,60,130);
+  color:@fg;
 }
 
 /* Right modules */
 #network {
-  color: rgb(130,60,130);
+  color:@fg;
 }
+
 #language {
-  color: rgb(130,60,130);
+  color:@fg;
 }
 
 #power-profiles-daemon {
   min-width: 20px;
 }
+
 #power-profiles-daemon.performance {
-  color: rgb(200,60,60);
+  color: @status_critical;
 }
+
 #power-profiles-daemon.balanced {
-  color: rgb(210,130,60);
+  color: @status_warning;
 }
+
 #power-profiles-daemon.power-saver {
-  color: rgb(60,110,60);
+  color: @status_ok;
 }
 
 #cpu {
-  color: rgb(60,110,60);
+  color: @status_ok;
   background-color: transparent;
 }
+
 #cpu.warning {
-  color: rgb(210,130,60);
+  color: @status_warning;
 }
+
 #cpu.critical {
-  color: rgb(200,60,60);
+  color: @status_critical;
 }
 
 #memory {
-    color: rgb(60,110,60);
-    background-color: transparent;
+  color: @status_ok;
+  background-color: transparent;
 }
+
 #memory.warning {
-  color: rgb(210,130,60);
+  color: @status_warning;
 }
+
 #memory.critical {
-  color: rgb(200,60,60);
+  color: @status_critical;
 }
 
 #temperature {
-    color: rgb(60,110,60);
-    background-color: transparent;
+  color: @status_ok;
+  background-color: transparent;
 }
+
 #temperature.warning {
-  color: rgb(210,130,60);
+  color: @status_warning;
 }
+
 #temperature.critical {
-  color: rgb(200,60,60);
+  color: @status_critical;
 }
 
 #battery {
-    color: rgb(60,110,60);
-    background-color: transparent;
+  color: @status_ok;
+  background-color: transparent;
 }
+
 #temperature.warning {
-  color: rgb(210,130,60);
+  color: @status_warning;
 }
+
 #temperature.critical {
-  color: rgb(200,60,60);
+  color: @status_critical;
 }
 
 tooltip {
