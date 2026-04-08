@@ -45,6 +45,7 @@ packages=(
 	dolphin # File explorer
 	xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt5-wayland qt6-wayland # Hyprland themes integration
 	waybar # Status bar
+  blueman # Bluetooth management gui and tray applet
 	cliphist # clipboard
 	ripgrep # for neovim
 	neovim

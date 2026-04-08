@@ -1,6 +1,5 @@
 @define-color fg {{fg}};
 @define-color accent {{accent}};
-@define-color urgent {{urgent}};
 @define-color brightness {{brightness}};
 @define-color audio_volue {{audio_volume}};
 @define-color status_ok {{status_ok}};
