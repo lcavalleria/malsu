@@ -3,7 +3,7 @@
 * {
   min-height: 0;
   min-width: 0;
-  font-family: "Roboto";
+  font-family: sans-serif;
   font-size: 18px;
   font-weight: 700;
 }
@@ -190,6 +190,12 @@ window#waybar {
 #battery {
   color: @status_ok;
   background-color: transparent;
+}
+#battery.warning {
+  color: @status_warning;
+}
+#battery.critical {
+  color: @status_critical;
 }
 
 #temperature.warning {

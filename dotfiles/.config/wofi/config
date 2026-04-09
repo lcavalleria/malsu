@@ -1,0 +1,15 @@
+width=30%
+prompt=
+allow_images=true
+hide_scroll=true
+lines=10
+columns=2
+gtk_dark=true
+content_halign=fill
+image_size=48
+no_actions=true
+
+key_up=Ctrl-k
+key_right=Ctrl-l
+key_down=Ctrl-j
+key_left=Ctrl-h
