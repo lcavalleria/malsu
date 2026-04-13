@@ -1,0 +1,35 @@
+palette:
+  fg: "#904590ff"
+  accent: "#d07030ff"
+  brightness: "#d0b050ff"
+  audio_volume: "#204060ff"
+  status_ok: "#407040ff"
+  status_warning: "#d07030ff"
+  status_critical: "#c02020ff"
+  grey: "#505050ff"
+
+terminal:
+  # black
+  color0: "#000000ff"
+  color8: "#767676ff"
+  # red
+  color1: "#cc0403ff"
+  color9: "#f27070ff"
+  # green
+  color2: "#70b270ff"
+  color10: "#20ff20ff"
+  # yellow
+  color3: "#aaaa00ff"
+  color11: "#ffff20ff"
+  # blue
+  color4: "#7a7affff"
+  color12: "#2d23fcff"
+  # magenta
+  color5: "#cb1ed1ff"
+  color13: "#fd28ffff"
+  # cyan
+  color6: "#0dcdcdff"
+  color14: "#14ffffff"
+  # white
+  color7: "#aaaaaaff"
+  color15: "#ffffffff"

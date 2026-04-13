@@ -60,6 +60,8 @@ packages=(
 	openssh
 	git
 	zsh
+  iwgtk # gtk network manager gui
+  gomplate-bin
 )
 for pkg in "${packages[@]}"; do
 	if pacman -Qi "$pkg" >/dev/null 2>&1; then
@@ -96,6 +98,9 @@ cp "$SCRIPT_DIR/dotfiles/.p10k.zsh" $HOME
 
 echo "Clone nvim-config git repo"
 git clone https://github.com/lcavalleria/nvim-config $HOME/.config/nvim
+
+echo "Run theme config script"
+bash $HOME/.config/malsu/apply_theme.sh
 
 
 ##################### User Configurations ###################

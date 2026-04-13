@@ -1,7 +1,0 @@
-@define-color fg rgb(130, 60, 130);
-@define-color accent rgb(130, 60, 130);
-@define-color brightness rgb(150, 130, 30);
-@define-color audio_volue rgb(30, 80, 120);
-@define-color status_ok rgb(60, 110, 60);
-@define-color status_warning rgb(210, 130, 60);
-@define-color status_critical rgb(200, 60, 60);

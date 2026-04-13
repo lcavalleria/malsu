@@ -119,10 +119,9 @@
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "{essid} ",
     "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
+    "tooltip-format": "gateway: {gwaddr}\nip: {ipaddr}/{cidr}",
     "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "on-click": "iwgtk"
   },
   "power-profiles-daemon": {
     "format": "{icon}",

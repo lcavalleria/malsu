@@ -1,3 +1,5 @@
+@import 'theme.css';
+
 #window {
   background-color: transparent;
 }
@@ -16,7 +18,7 @@
 #input {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15;
-  color: #ffffff;
+  color: #ffffff; /* TODO: parametrize? */
 
   outline-color: transparent !important;
   box-shadow: none !important;
@@ -25,12 +27,12 @@
 
 #input:focus {
   border-width: 1px;
-  border-color: rgb(130, 60, 130); /* Parametrize */
+  border-color: @fg;
   outline: none;
   box-shadow: none;
 }
 #input:focus image {
-  color: rgb(130, 60, 130); /* Parametrize */
+  color: @fg;
 }
 
 #entry {

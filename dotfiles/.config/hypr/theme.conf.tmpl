@@ -1,0 +1,11 @@
+general {
+    # https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
+    col.active_border = rgba({{ strings.TrimPrefix "#" (datasource "theme").palette.fg }}) rgba({{ strings.TrimPrefix "#" (datasource "theme").palette.fg }}) 45deg
+    col.inactive_border = rgba({{ strings.TrimPrefix "#" (datasource "theme").palette.grey }})
+}
+
+decoration {
+    shadow {
+        color = rgba({{ strings.TrimPrefix "#" (datasource "theme").palette.grey }})
+    }
+}
