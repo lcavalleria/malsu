@@ -48,6 +48,7 @@ packages=(
   blueman # Bluetooth management gui and tray applet
 	cliphist # clipboard
 	ripgrep # for neovim
+  unzip # for neovim (also general utility)
 	neovim
 	zen-browser-bin # Web browser
 	man-db # manual pages
