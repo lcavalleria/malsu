@@ -121,5 +121,3 @@ echo "Enable emptty systemd..."
 sudo systemctl enable emptty > /dev/null
 echo "Enable hyprpolkitagent..."
 systemctl --user enable hyprpolkitagent.service > /dev/null
-echo "Disable iwctl tray..."
-sudo systemctl mask app-iwgtk\\x2dindicator@autostart.service
