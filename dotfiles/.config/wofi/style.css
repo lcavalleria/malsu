@@ -1,4 +1,4 @@
-@import 'theme.css';
+@import '.config/wofi/theme.css';
 
 #window {
   background-color: transparent;
